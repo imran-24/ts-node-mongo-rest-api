@@ -1,0 +1,38 @@
+npm init -y
+npm install -D typescript
+npm install -D ts-node
+// used for keep tracking the changes
+npm install -D nodemon
+npm install dotenv
+npm install express body-parser cookie-parser compression cors mongoose
+npm install @types/express @types/body-parser @types/cookie-parser @types/compression @types/cors @types/mongoose
+
+configure these files
+
+tsconfig.json -
+{
+    "compilerOptions": {
+      "module": "NodeNext",
+      "moduleResolution": "NodeNext",
+      "baseUrl": "src",
+      "outDir": "dist",
+      "sourceMap": true,
+      "noImplicitAny": true,
+    },
+    "include": ["src/**/*"],
+}
+
+nodemon.josn -
+{
+    "watch": ["src"],
+    "ext": ".ts,.js",
+    "exec": "ts-node ./src/index.ts"
+}
+
+package.json - 
+"scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+},
+
+setup express server - 
